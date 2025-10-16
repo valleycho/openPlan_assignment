@@ -1,7 +1,7 @@
 import React from "react";
 
-type ButtonVariant = "text" | "contained" | "outlined";
-type ButtonSize = "small" | "medium" | "large";
+type ButtonVariant = "contained" | "outlined";
+type ButtonSize = "medium";
 type ButtonColor = "primary";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -13,13 +13,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const sizeStyles = {
-  small: "text-sm px-3 py-1.5",
   medium: "text-base px-3 py-3",
-  large: "text-lg px-4 py-4",
 };
 
 const colorStyles = {
-  primary: "bg-[#111111] text-white",
+  primary: "bg-[#111111]",
 };
 
 const variantStyles = {
