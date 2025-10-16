@@ -21,11 +21,10 @@ const colorStyles = {
 };
 
 const variantStyles = {
-  text: "text-[#111111] max-w-[335px] h-12 hover:opacity-80 active:opacity-80 mx-5 w-full",
   contained:
-    "bg-[#111111] text-white rounded-xl max-w-[335px] h-12 hover:opacity-80 active:opacity-80 mx-5 w-full",
+    "bg-[#111111] text-white rounded-xl max-w-[335px] h-12 hover:opacity-80 active:opacity-80 mx-5 w-full cursor-pointer",
   outlined:
-    "bg-transparent border border-[#111111] text-[#111111] rounded-xl max-w-[335px] h-12 hover:opacity-80 active:opacity-80 mx-5 w-full",
+    "bg-transparent border border-[#111111] text-[#111111] rounded-xl max-w-[335px] h-12 hover:opacity-80 active:opacity-80 mx-5 w-full cursor-pointer",
 };
 
 export const Button = ({
