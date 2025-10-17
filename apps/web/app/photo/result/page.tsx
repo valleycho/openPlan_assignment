@@ -7,17 +7,28 @@ import Header from "@/app/components/header/Header";
 import PhotoContentWrapper from "@/app/components/wrapper/PhotoContentWrapper";
 import PhotoWrapper from "@/app/components/wrapper/PhotoWrapper";
 import { usePhotoStore } from "@/app/store/usePhotoStore";
+import { Button } from "@openplan/ui";
 import { useRouter } from "next/navigation";
-import { useCallback } from "react";
+import { useCallback, useEffect } from "react";
 
 const PhotoResultPage = () => {
   const router = useRouter();
   const { photoInfo } = usePhotoStore();
-  console.log(photoInfo);
 
   const handlePrevClick = useCallback(() => {
     router.push("/");
   }, []);
+
+  useEffect(() => {
+    // photo 결과값이 없으면 1초 뒤 메인 페이지로 이동
+    if (!photoInfo?.id) {
+      const timer = setTimeout(() => {
+        router.replace("/");
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [photoInfo, router]);
 
   return (
     <>
@@ -46,6 +57,10 @@ const PhotoResultPage = () => {
             secondTitle="다운로드 URL"
             downloadUrl={photoInfo.download_url}
           />
+
+          <div className="flex justify-center">
+            <Button onClick={handlePrevClick}>이전</Button>
+          </div>
         </PhotoContentWrapper>
       </PhotoWrapper>
     </>
