@@ -9,7 +9,7 @@ export default function Home() {
   const router = useRouter();
 
   const handleNextClick = useCallback(() => {
-    router.push("/result");
+    router.push("/photo");
   }, []);
 
   return (
